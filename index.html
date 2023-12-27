@@ -7,46 +7,44 @@
     <title>吃什么</title>
     <style>
         /* 初始化页面，清除所有元素的内外边距 */
-        *{
+        * {
             padding: 0;
             margin: 0;
             /* 设置背景颜色为414141 */
             background-color: #414141;
         }
         /* 盒子居中 */
-        div{
+        div {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             text-align: center;
         }
         /* 使用上期视频的文字渐变效果，再加一点点文字阴影 */
-        span,h2{
-        	text-shadow: 0 0 10px #dfd8d8;
-            background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+        span, h2 {
+            background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: ff 0.9s linear infinite;
         }
-        @keyframes ff{
-            to{filter: hue-rotate(360deg);}
+        @keyframes ff {
+            to { filter: hue-rotate(360deg); }
         }
         /* 设置一下字体大小 */
-        h2{
+        h2 {
             font-size: 52px;
         }
-        span{
+        span {
             font-size: 46px;
         }
 
-
         /* 按钮居中 */
-        button{
+        button {
             position: absolute;
             top: 90%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: 80px;
             height: 25px;
             box-shadow: 0 0 10px #fff;
@@ -63,17 +61,16 @@
     </div>
     <button id="button_text">stop</button>
 
-
     <script>
         // 获取标签
         let nametxt=document.getElementById('name');
         let button=document.getElementById('button_text');
         // 创建一个数组存储名字
         let uname=['清真餐厅','西餐厅','川湘韵','醉面','德克士','北城小馆-小吃',
-				'北城小馆-饺子馄饨','北城小馆-蛋糕房','风味餐厅二层-五谷渔粉','风味餐厅二层-胖子盖浇饭（15元3个菜）','风味餐厅二层-营养快餐（15元3个菜）','风味餐厅二层-韩式拌饭','风味餐厅二层-掉渣饼','风味餐厅二层-小碗菜',
-				'风味餐厅二层-过桥米线','风味餐厅二层-满晨主食','风味餐厅三层-小谷姐姐麻辣烫','风味餐厅三层-乐在家快餐','风味餐厅三层-广式烧鸭饭','风味餐厅二层-热干面',
-				'风味餐厅三层-武大郎烧饼','风味餐厅三层-F+牛肉饭','风味餐厅三层-螺蛳粉','风味餐厅三层-小火锅','风味餐厅三层-重庆小面','一楼大食堂','八号楼食堂',
-				'西二层食堂','西三层食堂-牛肉汤','西三层食堂-分米鸡','西三层食堂-肉饼','西三层食堂-盖饭','麦门！'];
+                '北城小馆-饺子馄饨','北城小馆-蛋糕房','风味餐厅二层-五谷渔粉','风味餐厅二层-胖子盖浇饭（15元3个菜）','风味餐厅二层-营养快餐（15元3个菜）','风味餐厅二层-韩式拌饭','风味餐厅二层-掉渣饼','风味餐厅二层-小碗菜',
+                '风味餐厅二层-过桥米线','风味餐厅二层-满晨主食','风味餐厅三层-小谷姐姐麻辣烫','风味餐厅三层-乐在家快餐','风味餐厅三层-广式烧鸭饭','风味餐厅二层-热干面',
+                '风味餐厅三层-武大郎烧饼','风味餐厅三层-F+牛肉饭','风味餐厅三层-螺蛳粉','风味餐厅三层-小火锅','风味餐厅三层-重庆小面','一楼大食堂','八号楼食堂',
+                '西二层食堂','西三层食堂-牛肉汤','西三层食堂-分米鸡','西三层食堂-肉饼','西三层食堂-盖饭','麦门！'];
         // 创建一个函数生成随机数字
         function getrandom(min,max){
             return Math.floor(Math.random()*(max-min-1)+min);
